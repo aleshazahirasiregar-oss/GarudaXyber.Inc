@@ -2,6 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <!-- KODE VERIFIKASI GOOGLE GOOGLE SEARCH CONSOLE -->
+    <meta name="google-site-verification" content="G_BrCxiZHK5l_pue1vwaIjqELvVUyKDay8IdOVp6OFo" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garuda Xyber | Official Portal</title>
     <style>
@@ -175,6 +177,7 @@
         </div>
     </div>
 
+    <!-- MODAL DONASI -->
     <div id="donateModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -241,12 +244,10 @@
                 alert("Harap pilih nominal donasi dan metode pembayaran terlebih dahulu!");
                 return;
             }
-            // Simulasi popup aksi donasi aman
             alert(`[Garuda Xyber Secure Gateway]\n\nTerima kasih! Permintaan donasi sebesar ${selectedAmount} menggunakan ${selectedMethod} sedang disiapkan.\n\nSistem dienkripsi secara aman.`);
             closeModal();
         }
 
-        // Tutup modal jika klik di luar kotak
         window.onclick = function(event) {
             let modal = document.getElementById("donateModal");
             if (event.target == modal) {
