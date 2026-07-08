@@ -1,5 +1,3 @@
-cerita
-
 ## 🦅 Kisah GarudaXyber.inc: Bangkitnya Sang Legenda Digital
 
 Di era modern di mana privasi internet mulai terkikis dan raksasa teknologi menguasai segalanya, sebuah gerakan bawah tanah lahir dari tangan dingin seorang pemuda visioner yang dikenal di dunia siber sebagai **Jenderal Zafran**.
