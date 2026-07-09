@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRITICAL EXCEPTION DETECTED</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ff0033;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 40px;
+            margin: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Area log teks eror agar berada di atas emoji */
+        .glitch-box {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            position: relative;
+            z-index: 10;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Gaya animasi emoji berjatuhan */
+        .emoji-fall {
+            position: absolute;
+            top: -50px;
+            font-size: 2rem;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glitch-box" id="terminal-log"></div>
+
+    <script>
+        const logBox = document.getElementById('terminal-log');
+        const emojis = ['👾', '🤖', '☠️'];
+        
+        const errorMessages = [
+            "[!] CRITICAL SYSTEM WARNING: UNHANDLED EXCEPTION",
+            "[!] CORRUPTING OVERLOAD DETECTED AT PORT 8080...",
+            "[-] Deleting system32 cores... [FAILED]",
+            "[!] BYPASSING SECURITY INTERCEPT...",
+            "\n=======================================================",
+            "    WARNING: SECURITY BREACH IN PROGRESS BY GARUDAXYBER",
+            "=======================================================",
+            "\n[*] Dumping credentials... 100% SUCCESS.",
+            "\n[⚠️] SYSTEM TERMINATED! MENUTUP HALAMAN DALAM 3 DETIK..."
+        ];
+
+        let currentLine = 0;
+        
+        // 1. Jalankan Pengetikan Teks Otomatis
+        const typingInterval = setInterval(() => {
+            if (currentLine < errorMessages.length) {
+                logBox.innerHTML += errorMessages[currentLine] + "\n";
+                currentLine++;
+            } else {
+                clearInterval(typingInterval);
+                // 3. Setelah teks terakhir muncul, tunggu tepat 3 detik (3000 ms) lalu eksekusi penutupan tab
+                setTimeout(() => {
+                    closeGlitchWeb();
+                }, 3000); 
+            }
+        }, 300);
+
+        // 2. Jalankan Hujan Animasi Emoji 👾🤖☠️ Berjatuhan
+        const emojiInterval = setInterval(() => {
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji-fall');
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Atur posisi jatuhnya secara acak dari kiri ke kanan layar
+            emoji.style.left = Math.random() * 100 + "vw";
+            // Atur kecepatan jatuh acak (antara 1.5 sampai 3.5 detik)
+            emoji.style.animationDuration = (Math.random() * 2 + 1.5) + "s";
+            
+            document.body.appendChild(emoji);
+
+            // Hapus element dari RAM setelah jatuh ke bawah biar tidak lag
+            setTimeout(() => {
+                emoji.remove();
+            }, 3500);
+        }, 100);
+
+        // 4. Fungsi Utama Murni Menutup Halaman glitch.html
+        function closeGlitchWeb() {
+            clearInterval(emojiInterval);
+            // Mencoba perintah tutup tab bawaan browser
+            window.close();
+        }
+    </script>
+
+</body>
+</html>
