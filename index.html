@@ -2,124 +2,165 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="G_BrCxiZHK5l_pue1vwaIjqELvVUyKDay8IdOVp6OFo" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garuda Xyber | Official Portal</title>
+    <title>Garuda Xyber Inc. - Portal Resmi</title>
     <style>
+        /* Gaya Dasar Halaman (Tema Kegelapan / Dark Mode) */
         body {
-            background-color: #0a0a0a;
+            background-color: #000000;
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: #111111;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #00ffcc;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-        }
-        h1 {
-            color: #00ffcc;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            margin-bottom: 5px;
-        }
-        .subtitle {
-            color: #888;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-        }
-        .description {
-            line-height: 1.6;
-            color: #ddd;
-            margin-bottom: 40px;
-            text-align: left;
-            background: #161616;
-            padding: 20px;
-            border-left: 4px solid #00e676;
-            border-radius: 4px;
-        }
-        .app-list {
-            margin-top: 15px;
-            padding-left: 20px;
-        }
-        .btn-group {
+            padding: 0;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            align-items: center;
         }
-        .btn-download, .btn-donate {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
+
+        /* Kontainer Utama Kotak Web */
+        .portal-container {
+            background-color: #0d1117; 
+            border: 2px solid #00ff66;
+            border-left: 6px solid #00ff66;
+            padding: 30px; 
+            border-radius: 12px; 
+            max-width: 650px; 
+            width: 90%;
+            margin: 20px; 
+            box-shadow: 0px 8px 30px rgba(0, 255, 102, 0.15);
         }
-        .btn-download {
-            background: linear-gradient(45deg, #00ffcc, #00e676);
-            color: #000000;
-            box-shadow: 0 4px 15px rgba(0, 255, 204, 0.4);
+
+        /* Judul MICI */
+        .mici-title {
+            color: #00ff66; 
+            margin-top: 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
         }
-        .btn-download:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 255, 204, 0.6);
+
+        /* Deskripsi teks */
+        .mici-desc {
+            color: #8b949e; 
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
-        .btn-donate {
-            background: linear-gradient(45deg, #ff007f, #7928ca);
+
+        .mici-list-title {
+            font-weight: bold; 
+            margin-top: 20px;
+            margin-bottom: 8px;
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
         }
-        .btn-donate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.6);
+
+        /* Daftar Aplikasi */
+        .mici-list {
+            list-style-type: none; 
+            padding-left: 0; 
+            color: #c9d1d9; 
+            line-height: 1.8;
+            font-size: 0.95rem;
         }
-        footer {
-            margin-top: 50px;
-            color: #555;
-            font-size: 0.9em;
+
+        .mici-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Area Penempatan Tombol-Tombol */
+        .button-group {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+            margin-top: 30px; 
+            justify-content: center;
+        }
+
+        /* Struktur Utama Tombol */
+        .btn {
+            color: #000000; 
+            font-weight: bold; 
+            text-decoration: none; 
+            padding: 12px 28px; 
+            border-radius: 30px; 
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* 1. Tombol Hijau MICI */
+        .btn-mici {
+            background: linear-gradient(135deg, #00ff87 0%, #60efff 100%); 
+            box-shadow: 0 4px 15px rgba(0, 255, 135, 0.4);
+        }
+
+        /* 2. Tombol Baru Oranye Windos90 */
+        .btn-windos {
+            background: linear-gradient(135deg, #ffcc00 0%, #ff6600 100%); 
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+        }
+
+        /* 3. Tombol Ungu Donasi */
+        .btn-donate {
+            background: linear-gradient(135deg, #f02fc2 0%, #6094ea 100%); 
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(240, 47, 194, 0.4);
+        }
+
+        /* Bagian Kaki Web (Footer) */
+        .footer {
+            margin-top: 20px;
+            color: #57606a;
+            font-size: 0.8rem;
+            text-align: center;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🦅 GARUDA XYBER</h1>
-        <div class="subtitle">Secure Operational Systems Portal</div>
+    <div class="portal-container">
+        <h3 class="mici-title">MICI: Make In Country Indonesian</h3>
+        <p class="mici-desc">
+            Selamat datang di portal distribusi resmi Garuda Xyber Suite. Paket MICI berisi alat komunikasi terenkripsi, pemantau integritas, dan pengaman jaringan terproteksi.
+        </p>
         
-        <div class="description">
-            <strong>MICI: Make In Country Indonesian</strong><br><br>
-            Selamat datang di portal distribusi resmi Garuda Xyber Suite. Paket MICI berisi alat komunikasi terenkripsi, pemantau integritas, dan pengaman jaringan terproteksi.<br><br>
-            <strong>Isi Paket ZIP Terbaru (6 Aplikasi Utama):</strong>
-            <ul class="app-list">
-                <li>🌐 <strong>Skyhawk Browser</strong> - Penjelajah web aman terenkripsi.</li>
-                <li>📧 <strong>AirMail</strong> - Sistem komunikasi internal proteksi tinggi.</li>
-                <li>🛡️ <strong>Sentinal</strong> - Pemantau integritas file sistem.</li>
-                <li>🐱 <strong>VCatFriend</strong> - Pendamping virtual asisten sistem.</li>
-                <li>🚀 <strong>GTunnelVPN</strong> - Enkripsi jaringan aman Bypass pembatasan.</li>
-                <li>🔒 <strong>FireDNS</strong> - Penyaring traffic berbahaya & pelindung privasi.</li>
-            </ul>
-        </div>
+        <p class="mici-list-title">Isi Paket ZIP Terbaru (6 Aplikasi Utama):</p>
+        <ul class="mici-list">
+            <li>🌐 <strong>Skyhawk Browser</strong> - Penjelajah web aman terenkripsi.</li>
+            <li>📬 <strong>AirMail</strong> - Sistem komunikasi internal proteksi tinggi.</li>
+            <li>🛡️ <strong>Sentinal</strong> - Pemantau integritas file sistem.</li>
+            <li>🐱 <strong>VCatFriend</strong> - Pendamping virtual asisten sistem.</li>
+            <li>🚀 <strong>GTunnelVPN</strong> - Enkripsi jaringan aman Bypass pembatasan.</li>
+            <li>🔒 <strong>FireDNS</strong> - Penyaring traffic berbahaya & pelindung privasi.</li>
+        </ul>
 
-        <div class="btn-group">
-            <a href="MICI.zip" class="btn-download" download>DOWNLOAD MICI.ZIP 📥</a>
+        <div class="button-group">
             
-            <a href="https://trakteer.id/Aksbut_186" target="_blank" class="btn-donate">DONATE PROJECT☕</a>
+            <a href="./MICI.zip" download class="btn btn-mici">
+                DOWNLOAD MICI.ZIP 📥
+            </a>
+
+            <a href="./Windos90.iso.py" download class="btn btn-windos">
+                INSTALL WINDOS90.ISO.PY 🐍
+            </a>
+
+            <a href="#" class="btn btn-donate">
+                DONATE PROJECT ☕
+            </a>
+
         </div>
     </div>
 
-    <footer>
-        &copy; 2026 Garuda Xyber. All Rights Reserved. Built for System Security.
-    </footer>
+    <div class="footer">
+        © 2026 Garuda Xyber. All Rights Reserved. Built for System Security.
+    </div>
 
 </body>
 </html>
